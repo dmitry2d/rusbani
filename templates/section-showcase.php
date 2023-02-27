@@ -9,7 +9,6 @@
     $items = get_posts (array(
         'category' => 5,
     ));
-    print_pre ($items);
 ?>
 
 <div class="showcase">
@@ -150,12 +149,72 @@
         font-size: 48rem;
         color: rgb(var(--col-white));
         font-weight: 400;
-        z-index: 3;
         align-self: center;
         flex-grow: 1;
-        padding: 0 60rem;
+        padding: 0 80rem;
         line-height: 1;
+        z-index: 3;
+    }
+
+    .showcase__item__link {
+        border: 4rem solid rgb(var(--col-white));
+        padding: 10rem 50rem;
+        background: rgba(var(--col-green), 0.7);
+        align-self: center;
+        z-index: 3;
+        margin: 0 50rem;
+    }
+    .showcase__item__link a {
+        font-size: 32rem;
+        font-weight: 500;
+        color: rgb(var(--col-white));
+        text-decoration: none;
     }
     
+    @media screen and (max-width: 640px) {
+        
+        .showcase__items {
+            margin: 0;
+        }
+        .showcase__title {
+            padding: 20rem 0 0;
+            font-size: 32rem;
+            text-align: center;
+        }
+        .showcase__item {
+            flex-direction: column;
+            margin: 40rem 0;
+            padding-bottom: 40rem;
+        }
+        .showcase__item__photo {
+            min-width: 100%;
+            height: 0;
+            padding-top: 70%;
+            margin: 0;
+            margin-top: 20rem;
+        }
+        .showcase__item__photo img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            height: 100%;
+        }
+        .showcase__item__bg {
+            left: 20rem;
+            right: 20rem;
+            width: unset;
+        }
+        .showcase__item__title {
+            margin: 20rem 0;
+            font-size: 36rem;
+        }
+        .showcase__item__link {
+            margin: 0;
+            font-size: 24rem;
+        }
+    
+    }
+
 </style>
 
