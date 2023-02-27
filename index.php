@@ -2,6 +2,7 @@
 <?php
 
     if (!$IS_DEV) {
+        get_template_part('templates/page', 'welcome');
         exit();
     };
     

@@ -121,7 +121,7 @@
     }
 
     .top__title {
-        color: var(--col-white);
+        color: rgb(var(--col-white));
         padding-top: 190rem;
         font-weight: 400;
     }
@@ -148,7 +148,7 @@
     }
 
     .top__address {
-        color: var(--col-white);
+        color: rgb(var(--col-white));
         font-size: 16rem;
         font-weight: 300;
         background: url("<?= get_template_directory_uri(); ?>/src/images/icons/location_on.png") no-repeat left top;
@@ -157,7 +157,7 @@
         margin-top: 22rem;
     }
     .top__time {
-        color: var(--col-white);
+        color: rgb(var(--col-white));
         font-size: 16rem;
         font-weight: 300;
         background: url("<?= get_template_directory_uri(); ?>/src/images/icons/history_toggle_off.png") no-repeat left top;
@@ -172,14 +172,14 @@
     }
 
     .top__button{
-        background: rgba(16, 115, 0, 0.9);
+        background: rgba(var(--col-green),0.85);
         padding: 15rem 44rem;
         margin-bottom: 11rem;
         text-align: center;
     }
     .top__button,
     .top__button a {
-        color: var(--col-white);
+        color: rgb(var(--col-white));
         font-weight: 400;
         font-size: 30rem;
         text-decoration: none;

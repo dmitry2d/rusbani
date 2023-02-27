@@ -18,9 +18,11 @@
     
 
     :root {
-        --col-bg-beige: #FEF3D8;
-        --col-white: #FFFFFF;
-        --col-bg-green: rgba(16, 115, 0, 0.9);
+        --col-main: 58,48,48;
+        --col-bg-beige: 254,243,216;
+        --col-white: 255,255,255;
+        --col-green: 16,115,0;
+        --col-brown: 98,41,0;
         --container-max-width: 1335px;
     }
 
@@ -33,6 +35,7 @@
     
     body {
         font-size: 16rem;
+        color: rgb(var(--col-main));
         margin: 0;
         padding: 0;
     }
