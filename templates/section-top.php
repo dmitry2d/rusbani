@@ -39,7 +39,6 @@
                     <b>Адрес производства:</b><br>
                     <?= get_field('requisites-address', 10)['city'] ?>,<br>
                     <?= get_field('requisites-address', 10)['adress'] ?>
-
                 </div>
 
                 <div class="top__time">
@@ -70,7 +69,6 @@
 </div>
 
 <!-- section-top.php -->
-
 <style>
 
     .top__photo {

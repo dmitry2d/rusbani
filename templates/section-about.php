@@ -11,17 +11,19 @@
 
 <div class="about">
 
-    <div class="container">
-
-        <div class="about__title">
+    <div class="about__title">
+        <div class="container">
             О компании
         </div>
+    </div>
 
-        <div class="about__grid">
+    <div class="about__grid">
 
-            <div class="about__grid__bg">
-                <img src="<?= get_field('about-bg', 31) ?>">
-            </div>
+        <div class="about__grid__bg">
+            <img src="<?= get_field('about-bg', 31) ?>">
+        </div>
+
+        <div class="about__grid__items container">
 
             <div class="about__grid__left">
 
@@ -39,11 +41,11 @@
             <div class="about__grid__right">
 
                 <div class="about__text">
-                <?= get_field('about-text', 31) ?>
+                    <?= get_field('about-text', 31) ?>
                 </div>
 
             </div>
-            
+
         </div>
 
     </div>
@@ -51,7 +53,6 @@
 </div>
 
 <!-- section-about.php -->
-
 <style>
 
     .about {
@@ -69,8 +70,10 @@
     }
     
     .about__grid {
-        display: flex;
         padding: 50rem;
+    }
+    .about__grid__items {
+        display: flex;
     }
     .about__grid__left {
         min-width: 55%;
@@ -126,8 +129,10 @@
             text-align: center;
         }
         .about__grid {
+            padding: 20rem 0;
+        }
+        .about__grid__items {
             flex-direction: column;
-            padding: 20rem;
         }
         .about__video {
             height: 210rem;
