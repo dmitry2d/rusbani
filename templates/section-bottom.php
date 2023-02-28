@@ -87,9 +87,9 @@
     .bottom__title h1 {
         color: rgb(var(--col-white));
         font-size: 20rem;
-        font-weight: 700;
+        font-weight: 500;
         margin: 0;
-        padding: 0 0 15rem;
+        padding: 0 0 10rem;
     }
     .bottom__title b {
         display: block;

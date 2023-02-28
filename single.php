@@ -5,7 +5,6 @@
 ?>
 
 <?php
-    // For now, we have only 1 category - a sauna projects with only one single post type - sauna page
-    // So, the single post template is a project page
+    // For now we have only 1 single post template - a "sauna" page
     get_template_part('templates/page', 'project');
 ?>
