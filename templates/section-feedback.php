@@ -138,6 +138,17 @@
         }
         .feedback__item__wrapper {
         }
+        .feedback__item__wrapper {
+            background-image:  
+                url('<?= get_template_directory_uri(); ?>/src/images/quote_open.png'),
+                url('<?= get_template_directory_uri(); ?>/src/images/quote_close.png');
+            background-repeat: no-repeat;
+            background-position: 
+                20rem 20rem,
+                right 20rem bottom 20rem;
+            background-size: 20rem;
+            padding: 40rem 40rem 60rem;
+        }
         .feedback__item__name {
             font-size: 22rem;
         }

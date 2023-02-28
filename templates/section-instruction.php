@@ -11,8 +11,8 @@
 
 <div class="instruction">
 
-    <div class="instruction__title">
-        <div class="container">
+    <div class="container">
+        <div class="instruction__title">
             Инструкция по сайту
         </div>
     </div>
@@ -62,7 +62,7 @@
 
     .instruction__title {
         padding: 1em 0 0.5em;
-        padding-left: 100rem;
+        padding-left: 50rem;
         max-width: 40%;
         font-size: 48rem;
         color: rgb(var(--col-brown));
@@ -71,7 +71,7 @@
     }
     
     .instruction__grid {
-        padding: 50rem;
+        padding: 50rem 0;
     }
     .instruction__grid__items {
         display: flex;

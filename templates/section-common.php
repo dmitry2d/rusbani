@@ -49,7 +49,7 @@
     }
 
     .container {
-        width: calc(100% - 40rem);
+        width: calc(100% - 80rem);
         max-width: var(--container-max-width);
         margin: 0 auto;
     }
@@ -63,8 +63,14 @@
 
     @media screen and (max-width: 640px) {
         html {
-            font-size: 1px;
+            font-size: calc((35vw + 450px) / 640);
         }
+        .container {
+            width: calc(100% - 40rem);
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+        }
+
     }
 
 

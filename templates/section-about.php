@@ -11,8 +11,8 @@
 
 <div class="about">
 
-    <div class="about__title">
-        <div class="container">
+    <div class="container">
+        <div class="about__title">
             О компании
         </div>
     </div>
@@ -63,14 +63,14 @@
     .about__title {
         margin-left: 55%;
         padding: 1em;
-        padding-left: 50rem;
+        /* padding-left: 50rem; */
         font-size: 48rem;
         color: rgb(var(--col-brown));
         font-weight: 400;
     }
     
     .about__grid {
-        padding: 50rem;
+        padding: 50rem 0;
     }
     .about__grid__items {
         display: flex;
@@ -105,6 +105,7 @@
     }
     .about__text {
         padding: 50rem;
+        padding-right: 0;
         font-size: 24rem;
         color: rgb(var(--col-main));
     }
@@ -114,17 +115,17 @@
         top: 0;
         left: -50%;
         bottom: 0;
-        right: 0;
+        right: -40rem;
         background: #ffffff80;
     }
 
     @media screen and (max-width: 640px) {
         .about {
-            padding: 20rem 0 20rem;
+            padding: 20rem 0;
         }
         .about__title {
             margin-left: 0;
-            padding: 0 0 50rem;
+            padding: 10rem 0 50rem;
             font-size: 32rem;
             text-align: center;
         }
