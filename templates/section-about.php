@@ -120,11 +120,11 @@
 
     @media screen and (max-width: 640px) {
         .about {
-            padding: 15rem 0 20rem;
+            padding: 20rem 0 20rem;
         }
         .about__title {
             margin-left: 0;
-            padding: 1em 0 50rem;
+            padding: 0 0 50rem;
             font-size: 32rem;
             text-align: center;
         }

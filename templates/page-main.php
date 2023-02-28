@@ -15,6 +15,8 @@
     
     get_template_part('templates/section', 'instruction');
     
+    get_template_part('templates/section', 'showcase');
+    
     get_template_part('templates/section', 'working');
     
     get_template_part('templates/section', 'feedback');
