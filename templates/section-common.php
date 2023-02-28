@@ -67,7 +67,7 @@
         }
         .container {
             width: calc(100% - 40rem);
-            max-width: var(--container-max-width);
+            max-width: 100%;
             margin: 0 auto;
         }
 

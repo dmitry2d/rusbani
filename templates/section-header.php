@@ -28,6 +28,11 @@
             src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
         </script>
 
+        <!-- Common Styles And Scripts -->
+        <?php
+            get_template_part ('templates/section', 'common');
+        ?>
+
     </head>
 
     <body>

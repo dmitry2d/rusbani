@@ -11,6 +11,8 @@
     
     get_template_part('templates/section', 'top-inner');
     
+    get_template_part('templates/section', 'recent-projects');
+
     get_template_part('templates/section', 'project-photo');
 
     get_template_part('templates/section', 'bottom');
