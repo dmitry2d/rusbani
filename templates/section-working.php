@@ -134,6 +134,7 @@
         }
         .working__item {
             padding: 0 20rem;
+            margin-top: 20rem;
         }
         .working__item__number {
             font-size: 64rem;

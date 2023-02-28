@@ -73,9 +73,16 @@
         background: rgb(var(--col-bg-beige));
         padding: 20rem 0;
     }
+    .showcase:before {
+        position: absolute;
+        inset: 40rem;
+        top: 20rem;
+        content: '';
+        background: #ffffffa0;
+    }
 
     .showcase__title {
-        padding: 30rem;
+        padding: 40rem 0 100rem;
         font-size: 48rem;
         color: rgb(var(--col-brown));
         font-weight: 400;
@@ -83,13 +90,15 @@
     }
 
     .showcase__items {
-        margin: -100rem 0;
+        /* margin: -100rem 0; */
     }
     
     .showcase__item {
         display: flex;
         z-index: 1;
-        margin: 100rem 0;
+    }
+    .showcase__item + .showcase__item {
+        margin-top: 100rem;
     }
     .showcase__item__bg {
         position: absolute;
@@ -172,19 +181,31 @@
     }
     
     @media screen and (max-width: 640px) {
-        
+        .showcase:before {
+            position: absolute;
+            inset: 160rem 0;
+            content: '';
+            background: #ffffffa0;
+        }
         .showcase__items {
             margin: 0;
         }
         .showcase__title {
-            padding: 20rem 0 0;
+            padding: 0 0 40rem;
             font-size: 32rem;
             text-align: center;
         }
         .showcase__item {
             flex-direction: column;
-            margin: 40rem 0;
             padding-bottom: 40rem;
+        }
+        .showcase__item + .showcase__item {
+            margin-top: 40rem; 
+        }
+        .showcase__item__title {
+            font-size: 43rem;
+            padding: 10rem 20rem;
+            line-height: 1;
         }
         .showcase__item__photo {
             min-width: 100%;
@@ -197,7 +218,8 @@
             position: absolute;
             top: 0;
             left: 0;
-            min-width: 100%;
+            min-width: unset;
+            width: 100%;
             height: 100%;
         }
         .showcase__item__bg {
@@ -208,10 +230,13 @@
         .showcase__item__title {
             margin: 20rem 0;
             font-size: 36rem;
+            text-align: center;
         }
         .showcase__item__link {
             margin: 0;
-            font-size: 24rem;
+        }
+        .showcase__item__link a {
+            font-size: 22rem;
         }
     
     }

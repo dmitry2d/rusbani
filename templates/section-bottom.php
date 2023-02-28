@@ -20,7 +20,10 @@
                     <img src="<?= get_template_directory_uri(); ?>/src/images/logo.png">
                 </div>
                 <div class="bottom__title">
-                    <?= get_field('footer-logo-title', 29)?>
+                    <h1><?= get_field('footer-logo-title', 29)?></h1>
+                    <?= get_field('footer-logo-description', 29)?>
+                    <b>&copy; <?= date('Y')?></b>
+
                 </div>
             </div>
 
@@ -84,12 +87,13 @@
     .bottom__title h1 {
         color: rgb(var(--col-white));
         font-size: 20rem;
-        font-weight: 700;
+        font-weight: 400;
         margin: 0;
-        padding: 0 0 20rem;
+        padding: 0 0 10rem;
     }
     .bottom__title b {
         display: block;
+        padding-top: 0.4em;
     }
     .bottom__address {
         color: rgb(var(--col-white));
