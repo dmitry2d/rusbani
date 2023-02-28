@@ -73,7 +73,6 @@
         background: rgb(var(--col-bg-beige));
         padding: 20rem 0;
     }
-<<<<<<< HEAD
     .showcase:before {
         position: absolute;
         inset: 40rem;
@@ -84,11 +83,6 @@
 
     .showcase__title {
         padding: 40rem 0 100rem;
-=======
-
-    .showcase__title {
-        padding: 30rem;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
         font-size: 48rem;
         color: rgb(var(--col-brown));
         font-weight: 400;
@@ -96,23 +90,15 @@
     }
 
     .showcase__items {
-<<<<<<< HEAD
         /* margin: -100rem 0; */
-=======
-        margin: -100rem 0;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
     }
     
     .showcase__item {
         display: flex;
         z-index: 1;
-<<<<<<< HEAD
     }
     .showcase__item + .showcase__item {
         margin-top: 100rem;
-=======
-        margin: 100rem 0;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
     }
     .showcase__item__bg {
         position: absolute;
@@ -195,31 +181,22 @@
     }
     
     @media screen and (max-width: 640px) {
-<<<<<<< HEAD
         .showcase:before {
             position: absolute;
             inset: 160rem 0;
             content: '';
             background: #ffffffa0;
         }
-=======
-        
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
         .showcase__items {
             margin: 0;
         }
         .showcase__title {
-<<<<<<< HEAD
             padding: 0 0 40rem;
-=======
-            padding: 20rem 0 0;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
             font-size: 32rem;
             text-align: center;
         }
         .showcase__item {
             flex-direction: column;
-<<<<<<< HEAD
             padding-bottom: 40rem;
         }
         .showcase__item + .showcase__item {
@@ -230,11 +207,6 @@
             padding: 10rem 20rem;
             line-height: 1;
         }
-=======
-            margin: 40rem 0;
-            padding-bottom: 40rem;
-        }
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
         .showcase__item__photo {
             min-width: 100%;
             height: 0;
@@ -246,12 +218,8 @@
             position: absolute;
             top: 0;
             left: 0;
-<<<<<<< HEAD
             min-width: unset;
             width: 100%;
-=======
-            min-width: 100%;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
             height: 100%;
         }
         .showcase__item__bg {
@@ -262,7 +230,6 @@
         .showcase__item__title {
             margin: 20rem 0;
             font-size: 36rem;
-<<<<<<< HEAD
             text-align: center;
         }
         .showcase__item__link {
@@ -270,12 +237,6 @@
         }
         .showcase__item__link a {
             font-size: 22rem;
-=======
-        }
-        .showcase__item__link {
-            margin: 0;
-            font-size: 24rem;
->>>>>>> 75e25585e4903f47c7faeff2f51a0bebd8413ed0
         }
     
     }
