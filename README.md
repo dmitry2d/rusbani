@@ -20,7 +20,7 @@ A multi-page web site on WordPress CRM.
 
 ## Details
 
-* Theme has been built from empty scratch
+* No theme used
 * Page and section templates are in ./templates folder
 * Scripts and Styles are inside section files
 
