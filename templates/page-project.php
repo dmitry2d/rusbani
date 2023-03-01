@@ -15,6 +15,10 @@
 
     get_template_part('templates/section', 'project-photo');
 
+    get_template_part('templates/section', 'project-video');
+
+    get_template_part('templates/section', 'project-setup');
+
     get_template_part('templates/section', 'bottom');
     
     get_template_part('templates/section', 'footer');
