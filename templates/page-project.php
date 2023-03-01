@@ -19,6 +19,8 @@
 
     get_template_part('templates/section', 'project-setup');
 
+    get_template_part('templates/section', 'ask-a-question');
+
     get_template_part('templates/section', 'bottom');
     
     get_template_part('templates/section', 'footer');

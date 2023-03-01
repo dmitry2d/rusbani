@@ -8,6 +8,8 @@
 <?php
 global $post;
     // print_pre (get_fields(31, 1));
+    $video = get_field('video', $post->ID);
+    if ($video) {;
 ?>
 
 <div class="project-video">
@@ -98,3 +100,7 @@ global $post;
 
     }
 </style>
+
+<?php
+    }
+?>

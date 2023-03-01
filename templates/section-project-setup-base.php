@@ -61,7 +61,6 @@
         background: rgba(var(--col-dark-beige), 0.1);
         padding: 20rem 0 40rem;
     }
-
     .setup-base__title {
         padding: 20rem 0;
         font-size: 32rem;
@@ -79,6 +78,7 @@
         font-size: 24rem;
         padding: 20rem 40rem;
         color: rgb(var(--col-main));
+        min-width: 250rem;
     }
     
     .setup-base__items {
@@ -132,6 +132,10 @@
     }
     
     @media screen and (max-width: 640px) {
+        .setup-base {
+            background: rgba(var(--col-dark-beige), 0.1);
+            padding: 10rem 0 0;
+        }
         .setup-base__title {
             font-size: 24rem;
         }

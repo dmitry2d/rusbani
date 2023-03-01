@@ -17,7 +17,9 @@
         <div class="top-inner__grid">
 
             <div class="top-inner__logo">
-                <img src="<?= get_template_directory_uri(); ?>/src/images/logo.png">
+                <a href="/">
+                    <img src="<?= get_template_directory_uri(); ?>/src/images/logo.png">
+                </a>
             </div>
 
             <div class="top-inner__title">

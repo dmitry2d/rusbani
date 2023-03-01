@@ -33,6 +33,7 @@
         font-size: 1px;
         margin: 0!important;
         padding: 0;
+        width: 100%;
     }
     
     body {
@@ -40,6 +41,8 @@
         color: rgb(var(--col-main));
         margin: 0;
         padding: 0;
+        width: 100%;
+        overflow-x: hidden;
     }
     
     * {
