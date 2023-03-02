@@ -106,7 +106,7 @@
                         </div>
                     </div>
                     <div class="setup-options__total__buttons">
-                        <div class="setup-options__total__button">Оформить заявку</div>
+                        <div class="setup-options__total__button" id="create-request-button">Оформить заявку</div>
                         <div class="setup-options__total__button">Задать вопрос</div>
                     </div>
 
@@ -115,9 +115,27 @@
         </div>
     
     </div>
-    
+
 </div>
 
+<div class=popup id="options-popup">
+    <div class="popup__wrapper">
+        <div class="popup__container">
+            <div class="popup__close"></div>
+            <div class="popup__content">
+                12345
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready (() => {
+        $('#create-request-button').on('click', () => {
+            $('#options-popup').trigger('open');
+        });
+    });
+</script>
 
 <!-- section-project-setup-options.php -->
 <style>

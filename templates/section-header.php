@@ -34,5 +34,7 @@
         ?>
 
     </head>
+    
+    <?php get_template_part('templates/section', 'popup'); ?>
 
     <body>
