@@ -75,7 +75,7 @@
                     <div class="setup-options__table__td">
                         <div class="setup-option__price">
                             <div class="setup-option__price__text"><?= get_field ('price', $options_post_ID)?></div>
-                            <div class="setup-option__price__add">+добавить</div>
+                            <div class="setup-option__price__add" price="<?= get_field ('price', $options_post_ID)?>">+добавить</div>
                         </div>
                     </div>
                 </div>
@@ -94,15 +94,15 @@
 
                     <div class="setup-options__total__price">
                         <div class="setup-options__total__price__total">
-                            500 000 ₽ 
+                            <span id="prices__total">500 000 ₽</span>
                         </div>
                         <div class="setup-options__total__price__base">
                             Базовая цена
-                            <b>250 000 ₽</b>
+                            <b id="prices__base">0 ₽</b>
                         </div>
                         <div class="setup-options__total__price__options">
                             + цена дополнений
-                            <b>250 000 ₽</b>
+                            <b id="prices__options">0 ₽</b>
                         </div>
                     </div>
                     <div class="setup-options__total__buttons">
@@ -123,18 +123,24 @@
         <div class="popup__container">
             <div class="popup__close"></div>
             <div class="popup__content">
-                12345
+                <?= do_shortcode('[contact-form-7 id="6" title="test" html_id="options-form"]')?>
             </div>
         </div>
     </div>
 </div>
 
 <script>
+
     $(document).ready (() => {
         $('#create-request-button').on('click', () => {
             $('#options-popup').trigger('open');
         });
     });
+
+    function calculate() {
+
+    }
+
 </script>
 
 <!-- section-project-setup-options.php -->
