@@ -316,6 +316,7 @@
         padding: 5rem;
     }
     .setup-option__item__pictures {
+        cursor: pointer;
         padding: 5rem;
     }
     .setup-option__item__pictures img {
@@ -338,6 +339,7 @@
         border-radius: 3rem;
         padding: 5rem 10rem;
         color: rgb(var(--col-white));
+        cursor: pointer;
     }
     .setup-option__price__add > span {
         overflow: hidden;

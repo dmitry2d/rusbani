@@ -131,6 +131,7 @@
         padding: 5rem;
     }
     .setup-base__item__pictures {
+        cursor: pointer;
         padding: 5rem;
     }
     .setup-base__item__pictures img {
