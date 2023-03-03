@@ -33,6 +33,12 @@ $('#test-popup').trigger('open');
                 $(e.target).closest('.popup').removeClass('open');
             }
         });
+        $('.popup__close').on('click', (e) => {
+            $(e.target).closest('.popup').removeClass('open');
+        });
+        $('.popup').on('close', () => {
+            $(e.target).closest('.popup').removeClass('open');
+        });
     });
 </script>
 <style>
@@ -55,9 +61,20 @@ $('#test-popup').trigger('open');
         z-index: 1000;
     } 
     .popup__container {
-        min-width: min(90vw, 400rem);
+        width: min(90vw, 500rem);
         background: rgba(var(--col-white), 0.9);
         box-shadow: inset 0 0 0 6rem rgb(var(--col-dark-beige));
-        padding: 40rem 40rem;
+        padding: 60rem 40rem 40rem;
+    }
+    .popup__close {
+        position: absolute;
+        top: 25rem;
+        right: 20rem;
+        width: 40rem;
+        height: 40rem;
+        border-radius: 50rem;
+        cursor: pointer;
+        background: rgba(var(--col-dark-beige),1) url('<?= get_template_directory_uri(); ?>/src/images/hamburger__close.png') no-repeat center center;
+
     }
 </style>
