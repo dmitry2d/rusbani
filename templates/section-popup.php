@@ -26,6 +26,7 @@ $('#test-popup').trigger('open');
 <script>
     $(document).ready(() => {
         $('.popup').on('open', (e) => {
+            $('popup').removeClass('open');
             $(e.target).addClass('open');
         });
         $('.popup').on('click', (e) => {
