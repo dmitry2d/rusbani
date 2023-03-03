@@ -22,27 +22,29 @@
                 </div>
 
             </div>
-
+            
             <div class="ask__grid__right">
+                <?= do_shortcode('[contact-form-7 id="164" title="test" html_id="contact-form"]')?>
+            </div>
 
-                <div class="ask__form__grid">
-                    
-                    <div>
-                        <input type="text">
-                        <input type="text">
-                    </div>
-                    <div>
-                        <textarea name="" id="" cols="30" rows="10">
-
-                        </textarea>
-                        <div class="ask__form__button">
-                            Отправить
+            <!--
+                Original form html:         
+                <div class="ask__grid__right">
+                    <div class="ask__form__grid">
+                        <div>
+                            <input type="text">
+                            <input type="text">
+                        </div>
+                        <div>
+                            <textarea name="" id="" cols="30" rows="10">
+                            </textarea>
+                            <div class="ask__form__button">
+                                Отправить
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
-
-            </div>
+            -->
 
         </div>
 
@@ -57,7 +59,6 @@
         background: url('<?= get_field('about-bg', 31) ?>') no-repeat center/cover;
         padding: 30rem 0;
     }
-
     .ask__title {
         padding: 0 30rem;
         font-size: 48rem;
@@ -68,38 +69,36 @@
     
     .ask__grid {
         display: flex;
+        max-width: 100%;
+        overflow: hidden;
     }
     .ask__grid__left {
         min-width: 35%;
     }
     .ask__grid__right {
-        flex-grow: 1;
-    }
-
-    .ask__form__grid {
+        min-width: 65%;
         background: rgba(var(--col-white),0.8);
-        padding: 30rem;
+    }
+    .ask__form__grid {
+        padding: 30rem 30rem 0;
         display: flex;
     }
     .ask__form__grid > div {
         min-width: 50%;
         padding: 0 20rem;
     }
-    .ask__form__grid > div > * {
-        width: 100%;
-        margin: 10rem 0;
-        padding: 15rem 30rem;
-    }
-    .ask__form__grid  input,
-    .ask__form__grid  textarea {
+    .ask__form__grid input:not([type="submit"]),
+    .ask__form__grid textarea {
         font-size: 16rem;
         color: rgb(var(--col-main));
         background: rgb(var(--col-white));
         border: 2px solid rgb(var(--col-dark-beige));
         outline: none;
+        max-width: 100%;
+        padding: 10rem 20rem;
     }
-    .ask__form__grid  input:focus,
-    .ask__form__grid  textarea:focus {
+    .ask__form__grid input:not([type="submit"]):focus,
+    .ask__form__grid textarea:focus {
         border-color: rgb(var(--col-green));
     }
     .ask__form__button {
@@ -110,7 +109,15 @@
         font-size: 18rem;
         text-align: center;
         width: fit-content;
+        margin-top: 20rem;
+        border: 0;
+        outline: none;
     }
+    .ask .wpcf7 form .wpcf7-response-output {
+        padding: 20rem;
+        margin: 0 40rem 20rem;
+    }
+
     
     @media screen and (max-width: 640px) {
         .ask {
@@ -126,14 +133,18 @@
             flex-direction: column;
         }
         .ask__form__grid {
-            padding: 20rem 0;
+            padding: 20rem 0 0;
             flex-direction: column;
             justify-content: center;
         }
         .ask__form__grid  input,
         .ask__form__grid  textarea {
             padding: 15rem 10rem;
-            text-align: center;
+            /* text-align: center; */
+        }
+        .ask .wpcf7 form .wpcf7-response-output {
+            padding: 20rem;
+            margin: 0 20rem 20rem;
         }
         
     }
