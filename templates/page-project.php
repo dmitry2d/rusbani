@@ -21,6 +21,8 @@
 
     get_template_part('templates/section', 'ask-a-question');
 
+    get_template_part('templates/section', 'popup-gallery');
+
     get_template_part('templates/section', 'bottom');
         
     get_template_part('templates/section', 'footer');

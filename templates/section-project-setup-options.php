@@ -51,14 +51,16 @@
 
                         <div class="setup-option__items">
                             <?php
-                                foreach(get_field ('materials', $options_post_ID) as $item) {
+                                foreach(get_field ('materials', $options_post_ID) as $index=>$item) {
                             ?>
                                 <div class="setup-option__item">
                                     <div class="setup-option__item__text">
                                         <?= $item['title'] ?>
                                     </div>
                                     <div class="setup-option__item__pictures">
-                                        <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png">
+                                        <?php if($item['photos']): ?>
+                                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$index.'---'.$options_post_ID?>">
+                                        <?php endif;?>
                                     </div>
                                 </div>
                             <?php
@@ -196,6 +198,40 @@
         $('#options-form [name="my-options-total-price"]').val(prices_model.total().toLocaleString() + ' ₽');
     }
 
+</script>
+
+
+<!-- section-project-setup-options.php -->
+<script>
+    // option galleries
+    // collect gallery images data
+    const options_gallery_images = {};
+    <?php
+
+        foreach($options_post_IDs as $options_post_ID) {
+            foreach(get_field ('materials', $options_post_ID) as $index=>$item) {
+                ?>
+                options_gallery_images['<?= $index . '---' . $options_post_ID?>'] = [];
+                <?php
+                if($item['photos']):foreach($item['photos'] as $image) {
+                    ?>
+                        options_gallery_images['<?= $index . '---' . $options_post_ID?>'].push('<?=$image?>') ;
+                    <?php
+                };
+                endif;
+            }
+        }
+    ?>
+    // console.log (options_gallery_images);
+    $(document).ready(() => {
+        $('[options_popup_gallery_index]').on('click', e=> {
+            let index = $(e.target).attr('options_popup_gallery_index');            
+            if (options_gallery_images[index].length) {
+                $(document).trigger('popup_gallery_open', JSON.stringify(options_gallery_images[index]));
+            }
+        })
+    })
+    
 </script>
 
 <!-- section-project-setup-options.php -->

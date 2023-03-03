@@ -27,14 +27,16 @@
             </div>
             <div class="setup-base__items">
                 <?php
-                    foreach($items as $item) {
+                    foreach($items as $index=>$item) {
                 ?>
                     <div class="setup-base__item">
                         <div class="setup-base__item__text">
                             <?= $item['work-type'] ?>
                         </div>
                         <div class="setup-base__item__pictures">
-                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png">
+                            <?php if($item['images']): ?>
+                                <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" popup_gallery_index="<?=$index?>">
+                            <?php endif;?>
                         </div>
                     </div>
                 <?php
@@ -55,8 +57,38 @@
 
 
 <!-- section-project-setup-base.php -->
-<style>
+<script>
 
+    // collect gallery images data
+    const gallery_images = {};
+    <?php
+        foreach($items as $index=>$item) {
+            ?>
+            gallery_images[<?= $index?>] = [];
+            <?php
+            if($item['images']):foreach($item['images'] as $image) {
+                ?>
+                    gallery_images[<?= $index?>].push('<?=$image?>') ;
+                <?php
+            };
+            endif;
+        }
+    ?>
+    // console.log (gallery_images);
+    $(document).ready(() => {
+        $('[popup_gallery_index]').on('click', e=> {
+            let index = $(e.target).attr('popup_gallery_index');
+            if (gallery_images[index].length) {
+                $(document).trigger('popup_gallery_open', JSON.stringify(gallery_images[index]));
+            }
+        })
+    })
+    
+</script>
+
+
+<!-- section-project-setup-base.php -->
+<style>
     .setup-base {
         background: rgba(var(--col-dark-beige), 0.1);
         padding: 20rem 0 40rem;
