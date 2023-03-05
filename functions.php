@@ -8,6 +8,7 @@
     // Detect Dev by ip
     $DEV_IP_LIST = array('79.99.54.92','89.252.111.18', '178.57.114.23');
     $IS_DEV = in_array($_SERVER['REMOTE_ADDR'], $DEV_IP_LIST);
+    $IS_DEV = true;
     
     // Print formatted
     function print_pre($content) {
