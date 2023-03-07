@@ -17,7 +17,7 @@
 
             <div class="ask__grid__left">
 
-                <div class="ask__title">
+                <div class="ask__title" id=ask_anchor>
                     Задать вопрос
                 </div>
 

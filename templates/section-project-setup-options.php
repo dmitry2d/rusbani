@@ -11,7 +11,7 @@
     $base_title = get_the_title($base_setup_post_ID);
     $base_price = get_field('base-setup_price', $base_setup_post_ID);
     $options_post_IDs = get_field('options', $post->ID);
-    $options = get_field('option-setup', $post->ID);
+    $options = get_field('option-setup', $post->ID)??[];
 ?>
 
 
@@ -39,28 +39,28 @@
                 </div>
                 
                 <?php
-                    foreach($options_post_IDs as $options_post_ID) {
+                    foreach($options as $option_index=>$option) {
                 ?>
 
                 <div class="setup-options__table__tr">
                     <div class="setup-options__table__td">
                         <div class="setup-option__title">
-                            <?= get_the_title ($options_post_ID)?> 
+                            <?= $option['title']?> 
                         </div>
                     </div>
                     <div class="setup-options__table__td">
 
                         <div class="setup-option__items">
                             <?php
-                                foreach(get_field ('materials', $options_post_ID) as $index=>$item) {
+                                foreach($option['options'] as $index=>$item) {
                             ?>
                                 <div class="setup-option__item">
                                     <div class="setup-option__item__text">
                                         <?= $item['title'] ?>
                                     </div>
                                     <div class="setup-option__item__pictures">
-                                        <?php if($item['photos']): ?>
-                                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$index.'---'.$options_post_ID?>">
+                                        <?php if($item['images']): ?>
+                                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$index.'---'.$option_index?>">
                                         <?php endif;?>
                                     </div>
                                 </div>
@@ -72,8 +72,8 @@
                     </div>
                     <div class="setup-options__table__td">
                         <div class="setup-option__price">
-                            <div class="setup-option__price__text"><?= get_field ('price', $options_post_ID)?></div>
-                            <div class="setup-option__price__add" price="<?= get_field ('price', $options_post_ID)?>">
+                            <div class="setup-option__price__text"><?= $option['price']?></div>
+                            <div class="setup-option__price__add" price="<?= $option['price']?>">
                                 <span class=setup-option__price__add__add>+&nbsp;добавить</span>
                                 <span class=setup-option__price__add__remove>-&nbsp;убрать</span>
                             </div>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="setup-options__total__buttons">
                         <div class="setup-options__total__button" id="create-request-button">Оформить заявку</div>
-                        <div class="setup-options__total__button">Задать вопрос</div>
+                        <a class="setup-options__total__button" href="#ask_anchor">Задать вопрос</a>
                     </div>
 
             </div>
@@ -209,20 +209,21 @@
     const options_gallery_images = {};
     <?php
 
-        foreach($options_post_IDs as $options_post_ID) {
-            foreach(get_field ('materials', $options_post_ID) as $index=>$item) {
+        foreach($options as $option_index=>$option) {
+            foreach($option['options'] as $index=>$item) {
                 ?>
-                options_gallery_images['<?= $index . '---' . $options_post_ID?>'] = [];
+                options_gallery_images['<?= $index . '---' . $option_index?>'] = [];
                 <?php
-                if($item['photos']):foreach($item['photos'] as $image) {
+                if($item['images']):foreach($item['images'] as $image) {
                     ?>
-                        options_gallery_images['<?= $index . '---' . $options_post_ID?>'].push('<?=$image?>') ;
+                        options_gallery_images['<?= $index . '---' . $option_index?>'].push('<?=$image?>') ;
                     <?php
                 };
                 endif;
             }
         }
     ?>
+    console.log (options_gallery_images)
     // console.log (options_gallery_images);
     $(document).ready(() => {
         $('[options_popup_gallery_index]').on('click', e=> {
@@ -252,7 +253,7 @@
     }
     .setup-options__grid {
         display: flex;
-        justify-content: flex-start;
+        /* justify-content: flex-start; */
         align-items: flex-start;
     }
     .setup-options__table {
@@ -366,6 +367,9 @@
         max-width: 250rem;
     }
     .setup-options__total {
+        position: sticky;
+        /* align-self: flex-end; */
+        top: 0;
         box-sizing: border-box;
         background: rgba(var(--col-white),0.5);
         padding: 15rem 20rem;
@@ -405,6 +409,7 @@
     }
 
     .setup-options__total__button {
+        display: block;
         background: rgb(var(--col-green));
         border-radius: 3rem;
         padding: 10rem 20rem;
@@ -412,6 +417,7 @@
         color: rgb(var(--col-white));
         font-size: 16rem;
         text-align: center;
+        text-decoration: none;
     }
 
     #options-form {
