@@ -7,11 +7,11 @@
 
 <?php
     global $post;
-    $base_setup_post_ID = get_field('base-setup', $post->ID);
-    $items = get_field('base-setup_options', $base_setup_post_ID);
-    $price  = get_field('base-setup_price', $base_setup_post_ID);
-    $picture  = get_field('base-setup_picture', $base_setup_post_ID);
-    $title = get_the_title($base_setup_post_ID);
+    $title = get_field('base-setup-title', $post->ID);
+    $picture = get_field('base-setup-picture', $post->ID);
+    $price = get_field('base-setup-price', $post->ID);
+    $items = get_field('base-setup-options', $post->ID);
+    if ($items) {
 ?>
 
 
@@ -31,7 +31,7 @@
                 ?>
                     <div class="setup-base__item">
                         <div class="setup-base__item__text">
-                            <?= $item['work-type'] ?>
+                            <?= $item['material'] ?>
                         </div>
                         <div class="setup-base__item__pictures">
                             <?php if($item['images']): ?>
@@ -54,6 +54,10 @@
     </div>
     
 </div>
+
+<?php
+    }
+?>
 
 
 <!-- section-project-setup-base.php -->
@@ -125,6 +129,11 @@
         color: rgb(var(--col-main));
         display: flex;
         align-items: flex-start;
+        transition: 0.3s;
+    }
+    .setup-base__item:hover {
+        background: rgba(var(--col-dark-beige),0.3);
+        border-radius: 10rem;
     }
     .setup-base__item__text {
         flex-grow: 1;

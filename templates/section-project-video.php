@@ -9,7 +9,7 @@
 global $post;
     // print_pre (get_fields(31, 1));
     $video = get_field('video', $post->ID);
-    if ($video) {;
+    if ($video && get_field('show-video', $post->ID)) {
 ?>
 
 <div class="project-video">

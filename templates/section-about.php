@@ -7,6 +7,8 @@
 
 <?php
     // print_pre (get_fields(31, 1));
+    if (get_field('show-about',31) && get_field('about-video',31)) {
+        
 ?>
 
 <div class="about">
@@ -51,6 +53,12 @@
     </div>
 
 </div>
+
+<?php
+
+    } 
+
+?>
 
 <!-- section-about.php -->
 <style>

@@ -312,6 +312,11 @@
         color: rgb(var(--col-main));
         display: flex;
         align-items: flex-start;
+        transition: 0.3s;
+    }
+    .setup-option__item:hover {
+        background: rgba(var(--col-dark-beige),0.3);
+        border-radius: 10rem;
     }
     .setup-option__item__text {
         flex-grow: 1;
