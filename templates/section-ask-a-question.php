@@ -52,7 +52,7 @@
 
 </div>
 
-<!-- section-ask.php -->
+<!-- section-ask-a-question.php -->
 <style>
 
     .ask {
@@ -122,8 +122,13 @@
     @media screen and (max-width: 640px) {
         .ask {
             padding: 20rem 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.5s;
         }
-        
+        body.open-ask-a-question .ask {
+            max-height: 1000px;
+        }
         .ask__title {
             font-size: 32rem;
             text-align: center;
@@ -149,3 +154,12 @@
         
     }
 </style>
+
+<!-- templates/section-ask-a-question.php -->
+<script>
+    $(document).ready(() => {
+        $('.setup-options__total__button').click(() => {
+            $('body').addClass('open-ask-a-question');
+        })
+    })
+</script>

@@ -184,7 +184,7 @@
             .reduce((summ, item) => {
                 return summ + '- ' + $(item).html() + '<br>';
             }, '');
-        $('#setup-options__form__details').html(html);
+        // $('#setup-options__form__details').html(html);
         $('#options-form [name="my-options-title"]').val('<?= get_the_title() ?>');
         $('#options-form [name="my-options-base-title"]').val('<?= $base_title ?>');
         $('#options-form [name="my-options-options"]').val(
