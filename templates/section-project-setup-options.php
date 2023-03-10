@@ -313,10 +313,14 @@
         display: flex;
         align-items: flex-start;
         transition: 0.3s;
+        padding: 5rem 0;
+    }
+    .setup-option__item + .setup-option__item {
+        border-top: 1px solid rgba(var(--col-dark-beige),0.3);
     }
     .setup-option__item:hover {
         background: rgba(var(--col-dark-beige),0.3);
-        border-radius: 10rem;
+        /* border-radius: 10rem; */
     }
     .setup-option__item__text {
         flex-grow: 1;
@@ -325,8 +329,14 @@
     .setup-option__item__pictures {
         cursor: pointer;
         padding: 5rem;
+        align-self: stretch;
     }
     .setup-option__item__pictures img {
+        display: block;
+        /* width: 100%; */
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
         width: 24rem;
     }
     .setup-option__price {
@@ -334,7 +344,7 @@
         align-items: center;
         padding: 5rem 0;
         justify-content: space-between;
-        margin-bottom: 20rem;
+        /* margin-bottom: 20rem; */
     }
     .setup-option__price__text {
         color: rgb(var(--col-brown));
