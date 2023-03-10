@@ -184,7 +184,7 @@
             .reduce((summ, item) => {
                 return summ + '- ' + $(item).html() + '<br>';
             }, '');
-        $('#setup-options__form__details').html(html);
+        // $('#setup-options__form__details').html(html);
         $('#options-form [name="my-options-title"]').val('<?= get_the_title() ?>');
         $('#options-form [name="my-options-base-title"]').val('<?= $base_title ?>');
         $('#options-form [name="my-options-options"]').val(
@@ -312,6 +312,11 @@
         color: rgb(var(--col-main));
         display: flex;
         align-items: flex-start;
+        transition: 0.3s;
+    }
+    .setup-option__item:hover {
+        background: rgba(var(--col-dark-beige),0.3);
+        border-radius: 10rem;
     }
     .setup-option__item__text {
         flex-grow: 1;

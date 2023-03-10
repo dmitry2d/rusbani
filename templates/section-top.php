@@ -55,7 +55,7 @@
                     <a href="<?= get_field('requisites-whatsapp', 10) ?>">Whatsapp</a>
                 </div>
                 <div class="top__button">
-                    <a href="<?= get_field('requisites-email', 10) ?>">E-mail</a>
+                    <a href="mailto:<?= get_field('requisites-email', 10) ?>">E-mail</a>
                 </div>
 
             </div>

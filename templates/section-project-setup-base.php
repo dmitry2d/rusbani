@@ -74,7 +74,6 @@
             endif;
         }
     ?>
-    // console.log (gallery_images);
     $(document).ready(() => {
         $('[popup_gallery_index]').on('click', e=> {
             let index = $(e.target).attr('popup_gallery_index');
