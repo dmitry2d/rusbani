@@ -1,4 +1,3 @@
-
 <?php
 /*
 * Section instruction
@@ -14,7 +13,7 @@
 
     <div class="container">
         <div class="instruction__title">
-            Инструкция по сайту
+            Инструкция по&nbsp;сайту
         </div>
     </div>
 
