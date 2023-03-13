@@ -124,6 +124,10 @@
         flex-grow: 1;
         min-width: 40%;
     }
+    .setup-base__item + .setup-base__item  {
+        border-top: 1px solid rgba(var(--col-dark-beige),0.3);
+        padding: 6rem 0;
+    }
     .setup-base__item {
         font-size: 18rem;
         color: rgb(var(--col-main));
@@ -133,7 +137,6 @@
     }
     .setup-base__item:hover {
         background: rgba(var(--col-dark-beige),0.3);
-        border-radius: 10rem;
     }
     .setup-base__item__text {
         flex-grow: 1;

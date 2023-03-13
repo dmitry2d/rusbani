@@ -307,7 +307,12 @@
         flex-grow: 1;
         min-width: 40%;
     }
+    .setup-option__item + .setup-option__item  {
+        border-top: 1px solid rgba(var(--col-dark-beige),0.3);
+        padding: 6rem 0;
+    }
     .setup-option__item {
+        padding: 6rem 0;
         font-size: 18rem;
         color: rgb(var(--col-main));
         display: flex;
@@ -316,7 +321,6 @@
     }
     .setup-option__item:hover {
         background: rgba(var(--col-dark-beige),0.3);
-        border-radius: 10rem;
     }
     .setup-option__item__text {
         flex-grow: 1;
@@ -334,7 +338,6 @@
         align-items: center;
         padding: 5rem 0;
         justify-content: space-between;
-        margin-bottom: 20rem;
     }
     .setup-option__price__text {
         color: rgb(var(--col-brown));
