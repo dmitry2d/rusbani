@@ -31,6 +31,7 @@
     
     html {
         font-size: 1px;
+        letter-spacing: -0.3rem;
         margin: 0!important;
         padding: 0;
         width: 100%;

@@ -18,7 +18,7 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
-        <title><?php wp_title(); ?></title>
+        <title>Русбани-Ка <?php wp_title(); ?></title>
         <?php wp_head(); ?>
 
         <!-- jQuery -->

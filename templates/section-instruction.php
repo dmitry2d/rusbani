@@ -7,6 +7,7 @@
 
 <?php
     // print_pre (get_fields(31, 1));
+    if (get_field('show-instruction',31) && get_field('instruction-video',31)) {
 ?>
 
 <div class="instruction">
@@ -51,6 +52,10 @@
     </div>
 
 </div>
+
+<?php
+    }
+?>
 
 <!-- section-instruction.php -->
 <style>

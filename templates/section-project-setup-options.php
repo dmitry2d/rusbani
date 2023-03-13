@@ -7,9 +7,8 @@
 
 <?php
     global $post;
-    $base_setup_post_ID = get_field('base-setup', $post->ID);
-    $base_title = get_the_title($base_setup_post_ID);
-    $base_price = get_field('base-setup_price', $base_setup_post_ID);
+    $base_title = get_field('base-setup-title', $post->ID);
+    $base_price = get_field('base-setup-price', $post->ID);
     $options_post_IDs = get_field('options', $post->ID);
     $options = get_field('option-setup', $post->ID)??[];
 ?>
@@ -73,10 +72,12 @@
                     <div class="setup-options__table__td">
                         <div class="setup-option__price">
                             <div class="setup-option__price__text"><?= $option['price']?></div>
-                            <div class="setup-option__price__add" price="<?= $option['price']?>">
-                                <span class=setup-option__price__add__add>+&nbsp;добавить</span>
-                                <span class=setup-option__price__add__remove>-&nbsp;убрать</span>
-                            </div>
+                            <?php if ($option['price']) {?>
+                                <div class="setup-option__price__add" price="<?= $option['price']?>">
+                                    <span class=setup-option__price__add__add>+&nbsp;добавить</span>
+                                    <span class=setup-option__price__add__remove>-&nbsp;убрать</span>
+                                </div>
+                            <?php }; ?>
                         </div>
                     </div>
                 </div>
