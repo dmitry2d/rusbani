@@ -7,10 +7,10 @@
 
 <?php
     global $post;
-    $title = get_field('base-setup-title', $post->ID);
-    $picture = get_field('base-setup-picture', $post->ID);
-    $price = get_field('base-setup-price', $post->ID);
-    $items = get_field('base-setup-options', $post->ID);
+    $items = get_field('base-setup_options', $base_setup_post_ID);
+    $price  = get_field('base-setup_price', $base_setup_post_ID);
+    $picture  = get_field('base-setup_picture', $base_setup_post_ID);
+    $title = get_the_title($base_setup_post_ID);
     if ($items) { 
 ?>
 
