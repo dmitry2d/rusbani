@@ -11,7 +11,7 @@
     $picture = get_field('base-setup-picture', $post->ID);
     $price = get_field('base-setup-price', $post->ID);
     $items = get_field('base-setup-options', $post->ID);
-    if ($items) {
+    if ($items) { 
 ?>
 
 
