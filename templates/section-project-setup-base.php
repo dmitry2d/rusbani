@@ -205,7 +205,7 @@
             display: none;
         }
         .setup-base__item__price {
-            display: none;
+            /* display: none; */
         }
         .setup-base__table__title {
             padding: 0 0 20rem;

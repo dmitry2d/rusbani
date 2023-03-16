@@ -69,13 +69,16 @@
                         </div>
 
                     </div>
-                    <div class="setup-options__table__td">
-                        <?php if($option['option-images']): ?>
-                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$option_index?>">
-                        <?php endif;?>
-                    </div>
+
+                    
+
                     <div class="setup-options__table__td">
                         <div class="setup-option__price">
+                            <div class="setup-option__pictures">
+                                <?php if($option['option-images']): ?>
+                                    <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$option_index?>">
+                                <?php endif;?>
+                            </div>
                             <div class="setup-option__price__text"><?= $option['price']?$option['price'].'&nbsp;₽':''?></div>
                             <?php if ($option['price']) {?>
                                 <div class="setup-option__price__add" price="<?= $option['price']?>">
@@ -264,6 +267,7 @@
         padding-right: 20rem;
         flex-grow: 1;
     }
+    
     .setup-options__table__td:nth-child(1) {
         min-width: 250rem;
         max-width: 250rem;
@@ -272,8 +276,8 @@
         flex-grow: 1;
     }
     .setup-options__table__td:nth-child(3) {
-        min-width: 25%;
-        max-width: 25%;
+        min-width: 270rem;
+        max-width: 270rem;
     }
     .setup-options__table__tr {
         background:  rgba(var(--col-white), 0.5);
@@ -307,6 +311,20 @@
         padding: 5rem 20rem 0 0;
         line-height: 0.9;
     }
+    .setup-option__pictures {
+        cursor: pointer;
+        padding: 5rem;
+        align-self: stretch;
+        min-width: 40rem;
+        max-width: 40rem;
+    }
+    .setup-option__pictures img {
+        display: block;
+        height: 100%;
+        object-fit: contain;
+        object-position: center center;
+        width: 100%;
+    }
     .setup-option__items {
         display: flex;
         flex-direction: column;
@@ -338,19 +356,7 @@
         flex-grow: 1;
         padding: 5rem;
     }
-    .setup-option__item__pictures {
-        cursor: pointer;
-        padding: 5rem;
-        align-self: stretch;
-    }
-    .setup-option__item__pictures img {
-        display: block;
-        /* width: 100%; */
-        height: 100%;
-        object-fit: contain;
-        object-position: center center;
-        width: 24rem;
-    }
+
     .setup-option__price {
         display: flex;
         align-items: center;
@@ -362,6 +368,7 @@
         color: rgb(var(--col-brown));
         font-size: 18rem;
         font-weight: 500;
+        padding: 0 20rem 0 40rem;
     }
     .setup-option__price__add {
         background: rgb(var(--col-green));
@@ -510,6 +517,21 @@
         .setup-option__title {
             margin-bottom: 10rem;
         }
+        .setup-option__pictures {
+            min-width: unset;
+            max-width: unset;
+            padding: 0;
+        }
+        .setup-option__pictures img {
+            width: 24rem;
+            height: 28rem;
+            margin-right: 50rem;
+        }
+        .setup-option__price__text {
+            flex-grow: 1;
+            padding: 2rem 20rem 0 0;
+            font-size: 22rem;
+        }
         .setup-option__items {
             padding: 0;
         }
@@ -519,9 +541,10 @@
         .setup-option__price {
             display: flex;
             align-items: center;
-            padding: 5rem 0;
+            padding: 15rem 0 0;
             justify-content: space-between;
-            margin: 20rem 0 0;
+            margin: 5rem 0;
+            border-top: 2px solid rgba(var(--col-dark-beige),0.7);
         }
         .setup-options__total {
             padding: 10rem 0;
