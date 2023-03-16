@@ -116,7 +116,7 @@
         font-weight: 500;
     }
     .bottom__phone {
-        background: url("<?= get_template_directory_uri(); ?>/src/images/icons/phone_in_talk.png") no-repeat left top;
+        /* background: url("<?= get_template_directory_uri(); ?>/src/images/icons/phone_in_talk.png") no-repeat left top; */
         background-size: 36rem;
         padding-left: 50rem;
         min-height: 36rem;
@@ -126,15 +126,19 @@
         font-size: 22rem;
         font-weight: 700;
         text-decoration: none;
+        background: rgba(var(--col-green), 0.8) url("<?= get_template_directory_uri(); ?>/src/images/icons/phone_in_talk.png") no-repeat 10rem center;
+        padding: 10rem 30rem 10rem 70rem;
+        background-size: 36rem;
+        border-radius: 6rem;
+        white-space: nowrap;
     }
     @media screen and (max-width: 640px) {
         .bottom__grid {
             flex-direction: column;
-            padding-left: 20rem;
+            padding: 0 20rem;
         }
         .bottom__grid > div {
             min-width: 100%;
-            
         }
         .bottom__logo {
             width: 100rem;
@@ -164,9 +168,14 @@
             margin-top: 30rem;
         }
         .bottom__phone {
-            padding-left: 60rem;
-            margin-left: 20rem;
-            margin-top: 30rem;
+            padding: 0;
+            padding-left: 10rem;
+            padding-right: 10rem;
+            margin-top: 40rem;
+        }
+        .bottom__phone a {
+            display: block;
+            min-width: 100%;
         }
     }
 </style>

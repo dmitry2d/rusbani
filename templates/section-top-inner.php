@@ -24,7 +24,7 @@
 
             <div class="top-inner__title">
                 <h1><?= get_field('footer-logo-title', 29)?></h1>
-                <?= get_field('footer-logo-description', 29)?>
+                <?= get_field('header-inside-logo-text', 27)?>
             </div>
 
             <div class="top-inner__address">

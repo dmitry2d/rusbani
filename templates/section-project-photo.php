@@ -21,7 +21,9 @@
     ?>
 
         <div class="project-photo__item">
-            <img src="<?= $photo ?>">
+            <a href="<?= $photo ?>">
+                <img src="<?= $photo ?>">
+            </a>
         </div>
 
     <?php
@@ -30,13 +32,15 @@
 
     </div>
 
-    <div class="project-photo__title">
+    <!-- <div class="project-photo__title">
         <div class="container">
-            <div class="project-photo__title__wrapper">
-                <?= get_the_title(); ?>
-            </div>
+            <div class="project-photo__title__wrapper"> -->
+                <?php 
+                    // echo get_the_title();
+                ?>
+            <!-- </div>
         </div>
-    </div>
+    </div> -->
 
 </div>
 

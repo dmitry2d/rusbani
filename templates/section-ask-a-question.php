@@ -14,16 +14,14 @@
     <div class="container">
 
         <div class="ask__grid">
-
+<!-- 
             <div class="ask__grid__left">
-
+            </div> -->
+            
+            <div class="ask__grid__right">
                 <div class="ask__title" id=ask_anchor>
                     Задать вопрос
                 </div>
-
-            </div>
-            
-            <div class="ask__grid__right">
                 <?= do_shortcode('[contact-form-7 id="164" title="test" html_id="contact-form"]')?>
             </div>
 
@@ -60,7 +58,7 @@
         padding: 30rem 0;
     }
     .ask__title {
-        padding: 0 30rem;
+        padding: 30rem 50rem 0;
         font-size: 48rem;
         color: rgb(var(--col-brown));
         font-weight: 300;
@@ -71,6 +69,8 @@
         display: flex;
         max-width: 100%;
         overflow: hidden;
+        align-items: center;
+        justify-content: center;
     }
     .ask__grid__left {
         min-width: 35%;
@@ -121,7 +121,7 @@
     
     @media screen and (max-width: 640px) {
         .ask {
-            padding: 20rem 0;
+            padding: 0;
             max-height: 0;
             overflow: hidden;
             transition: 0.5s;
@@ -132,16 +132,21 @@
         .ask__title {
             font-size: 32rem;
             text-align: center;
-            padding: 40rem 0;
+            padding: 40rem 0 0;
         }
         .ask__grid {
             flex-direction: column;
+            margin: 20rem 0;
         }
         .ask__form__grid {
-            padding: 20rem 0 0;
+            padding: 20rem 20rem 0;
             flex-direction: column;
             justify-content: center;
         }
+        .ask__form__grid > * {
+            align-items: center;
+        }
+
         .ask__form__grid  input,
         .ask__form__grid  textarea {
             padding: 15rem 10rem;
@@ -151,7 +156,9 @@
             padding: 20rem;
             margin: 0 20rem 20rem;
         }
-        
+        .ask__form__grid input, .ask__form__grid textarea {
+            width: 100%;
+        }
     }
 </style>
 

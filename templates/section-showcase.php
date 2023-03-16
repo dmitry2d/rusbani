@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="showcase__item__link">
-                    <a href="<?= get_permalink($item -> ID)?>">Подробно</a>
+                    <a href="<?= get_permalink($item -> ID)?>">Подробнее</a>
                 </div>
 
             </div>

@@ -57,11 +57,11 @@
                                     <div class="setup-option__item__text">
                                         <?= $item['title'] ?>
                                     </div>
-                                    <div class="setup-option__item__pictures">
-                                        <?php if($item['images']): ?>
+                                    <!-- <div class="setup-option__item__pictures"> -->
+                                        <?php if(false && $item['images']): ?>
                                             <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$index.'---'.$option_index?>">
                                         <?php endif;?>
-                                    </div>
+                                    <!-- </div> -->
                                 </div>
                             <?php
                                 }
@@ -70,8 +70,13 @@
 
                     </div>
                     <div class="setup-options__table__td">
+                        <?php if($option['option-images']): ?>
+                            <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" options_popup_gallery_index="<?=$option_index?>">
+                        <?php endif;?>
+                    </div>
+                    <div class="setup-options__table__td">
                         <div class="setup-option__price">
-                            <div class="setup-option__price__text"><?= $option['price']?></div>
+                            <div class="setup-option__price__text"><?= $option['price']?$option['price'].'&nbsp;₽':''?></div>
                             <?php if ($option['price']) {?>
                                 <div class="setup-option__price__add" price="<?= $option['price']?>">
                                     <span class=setup-option__price__add__add>+&nbsp;добавить</span>
@@ -211,21 +216,19 @@
     <?php
 
         foreach($options as $option_index=>$option) {
-            foreach($option['options'] as $index=>$item) {
+            ?>
+            options_gallery_images['<?= $option_index?>'] = [];
+            <?php
+            if($option['option-images']):foreach($option['option-images'] as $image) {
                 ?>
-                options_gallery_images['<?= $index . '---' . $option_index?>'] = [];
+                    options_gallery_images['<?= $option_index?>'].push('<?=$image?>') ;
                 <?php
-                if($item['images']):foreach($item['images'] as $image) {
-                    ?>
-                        options_gallery_images['<?= $index . '---' . $option_index?>'].push('<?=$image?>') ;
-                    <?php
-                };
-                endif;
-            }
+            };
+            endif;
         }
     ?>
-    console.log (options_gallery_images)
-    // console.log (options_gallery_images);
+    // console.log (options_gallery_images)
+    console.log (options_gallery_images);
     $(document).ready(() => {
         $('[options_popup_gallery_index]').on('click', e=> {
             let index = $(e.target).attr('options_popup_gallery_index');            
@@ -288,6 +291,9 @@
         background: rgb(var(--col-white));
         box-shadow: unset;
         padding: 15rem 40rem;
+        position: sticky;
+        top: 0;
+        z-index: 2;
     }
     .setup-options__table__tr:nth-child(1)  .setup-options__table__td {
         color: rgb(var(--col-brown));

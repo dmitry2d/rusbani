@@ -20,14 +20,14 @@
 
         <title>Русбани-Ка <?php wp_title(); ?></title>
         <?php wp_head(); ?>
-
+        
         <!-- jQuery -->
         <script
             src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
             integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
             crossorigin="anonymous">
         </script>
-        
+                
         <!-- Slick Slider -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <script
