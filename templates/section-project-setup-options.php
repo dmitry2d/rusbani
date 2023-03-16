@@ -531,7 +531,7 @@
             flex-grow: 1;
             padding: 2rem 20rem 0 0;
             font-size: 22rem;
-        }
+        } 
         .setup-option__items {
             padding: 0;
         }

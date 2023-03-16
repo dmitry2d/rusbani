@@ -44,7 +44,7 @@
                 ?>
             </div>
             <div class="setup-base__item__price">
-                Цена базовой комплектации 
+                <span>Цена базовой комплектации</span>
                 <b><?= $price ?>₽</b>
             </div>
             <div class="setup-base__item__picture">
@@ -211,7 +211,7 @@
             padding: 0 0 20rem;
             font-size: 26rem;
             font-weight: 500;
-        }
+        } 
         .setup-base__items {
             padding: 0;
         }
