@@ -236,12 +236,13 @@
         .top-inner__grid > div.top-inner__phone {
             padding: 5px 20rem 5px 40px;
             order: 1;
+            min-width: unset;
         }
         .top-inner__phone a {
             display: block;
             padding: 10rem 20rem 10rem 60rem;
             font-size: 20rem;
-            min-width: 100%;
+            /* min-width: 100%; */
         }
     }
 </style>

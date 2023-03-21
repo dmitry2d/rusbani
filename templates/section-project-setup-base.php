@@ -218,6 +218,24 @@
         .setup-base__item__text {
             padding-left: 0;
         }
+        .setup-base__item__price {
+            display: flex;
+            background: none;
+            padding: 0;
+            align-items: center;
+            margin-top: 10rem;
+            padding-top: 15rem;
+            border-top: 2px solid rgba(var(--col-dark-beige),0.7);
+        }
+        .setup-base__item__price > span {
+            font-size: 15rem;
+            line-height: 1;
+        }
+        .setup-base__item__price > b {
+            white-space: nowrap;
+            font-size: 34rem;
+            font-weight: 500;
+        }
        
     }
 </style>
