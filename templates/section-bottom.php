@@ -44,6 +44,10 @@
             </div>
         
         </div>
+
+        <div class="bottom__made">
+            <?php get_template_part('templates/section', 'made-by'); ?>
+        </div>
     
     </div>
 
@@ -132,6 +136,9 @@
         border-radius: 6rem;
         white-space: nowrap;
     }
+    .bottom__made {
+        margin: 30rem 0 0 100rem;
+    }
     @media screen and (max-width: 640px) {
         .bottom__grid {
             flex-direction: column;
@@ -178,6 +185,10 @@
         .bottom__phone a {
             display: block;
             min-width: 100%;
+        }
+        .bottom__made {
+            text-align: right;
+            margin: 30rem 20rem 0 0;
         }
     }
 </style>
