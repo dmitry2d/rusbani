@@ -8,6 +8,7 @@
 <?php
     $items = get_posts (array(
         'category' => 5,
+        'numberposts' => 100
     ));
 ?>
 
