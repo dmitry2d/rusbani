@@ -21,7 +21,7 @@
     ?>
 
         <div class="project-photo__item">
-            <a href="<?= $photo ?>">
+            <a data-lightbox="project-photo" href="<?= $photo ?>">
                 <img src="<?= $photo ?>">
             </a>
         </div>
@@ -142,6 +142,18 @@
             background-image: url('<?= get_template_directory_uri(); ?>/src/images/go-active-small.png');
         }
     }
+
+    #lightbox {
+        top: 50vh!important;
+        transform: translateY(-50%);
+    }
+    .lb-nav a {
+        background-size: min(7vw,45px)!important;
+    }
+    .lb-number {
+        display: none!important;
+    }
+
 </style>
 
 <!-- section-project-photo.php -->
@@ -152,6 +164,9 @@
             prevArrow: '<div class="project-photo__items__prev-arrow"></div>',
             nextArrow: '<div class="project-photo__items__next-arrow"></div>'
         });
+        lightbox.option({
+            alwaysShowNavOnTouchDevices: true
+        })
     });
 
 </script>

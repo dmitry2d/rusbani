@@ -22,17 +22,20 @@
         <?php wp_head(); ?>
         
         <!-- jQuery -->
-        <script
-            src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
-            crossorigin="anonymous">
-        </script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
                 
         <!-- Slick Slider -->
         <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
         <script
         type="text/javascript"
         src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js">
+        </script>
+
+        <!-- LightBox -->
+        <link rel="stylesheet" type="text/css" href="<?= get_template_directory_uri(); ?>/src/lightbox/css/lightbox.min.css"/>
+        <script
+        type="text/javascript"
+        src="<?= get_template_directory_uri(); ?>/src/lightbox/js/lightbox.js">
         </script>
 
         <!-- Common Styles And Scripts -->
