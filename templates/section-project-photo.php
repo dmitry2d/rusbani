@@ -153,4 +153,5 @@
             nextArrow: '<div class="project-photo__items__next-arrow"></div>'
         });
     });
+
 </script>
