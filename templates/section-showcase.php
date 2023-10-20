@@ -34,8 +34,7 @@
                     $photo = get_template_directory_uri() . '/src/images/logo.png';
                 }
         ?>
-
-            <div class="showcase__item">
+            <a href="<?= get_permalink($item -> ID)?>" class="showcase__item">
 
                 <div class="showcase__item__bg">
                     <img src="<?= $photo ?>">
@@ -51,10 +50,10 @@
                 </div>
 
                 <div class="showcase__item__link">
-                    <a href="<?= get_permalink($item -> ID)?>">Подробнее</a>
+                    <span>Подробнее</span>
                 </div>
 
-            </div>
+            </a>
 
         <?php
             }
@@ -173,7 +172,10 @@
         z-index: 3;
         margin: 0 50rem;
     }
-    .showcase__item__link a {
+    .showcase__item {
+        text-decoration: none;
+    }
+    .showcase__item__link span {
         font-size: 32rem;
         font-weight: 500;
         color: rgb(var(--col-white));
@@ -235,7 +237,7 @@
         .showcase__item__link {
             margin: 0;
         }
-        .showcase__item__link a {
+        .showcase__item__link span {
             font-size: 22rem;
         }
     

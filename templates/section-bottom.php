@@ -172,6 +172,8 @@
             padding-left: 10rem;
             padding-right: 10rem;
             margin-top: 40rem;
+            min-width: unset!important;
+            width: fit-content;
         }
         .bottom__phone a {
             display: block;

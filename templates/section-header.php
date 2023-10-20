@@ -4,7 +4,7 @@
 */
 ?>
 
-<html class="rusbanika">
+<html class="rusbanika" lang="ru">
 
     <head>
         <meta charset="utf-8">
