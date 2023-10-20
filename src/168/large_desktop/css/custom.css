@@ -1,0 +1,85 @@
+
+@import './kv-title.css';
+@import './kv-light.css';
+@import './kv.css';
+@import './steps.css';
+@import './packs.css';
+
+.newheader {
+    position: relative;
+    z-index: 1000;
+}
+
+.custom {
+    --blue: #003DA7;
+    --sky: #00B2FF;
+    --yellow: #FFF200;
+    --white: #ffffff;
+    --width: min(100%, 1200px);
+    overflow: hidden;
+}
+
+.custom,
+.custom * {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    image-rendering: -webkit-optimize-contrast;
+}
+
+.custom .container {
+    width: var(--width);
+    margin: 0 auto;
+}
+
+.custom .blue {
+    color: var(--blue);
+}
+.custom .sky {
+    color: var(--sky);
+}
+.custom,
+.custom .bg-blue {
+    background-color: var(--blue);
+}
+.custom .yellow {
+    color: var(--yellow);
+}
+.custom .white {
+    color: var(--white);
+}
+.custom .regular {
+    font-weight: 400;
+}
+.custom .semibold {
+    font-weight: 500;
+}
+.custom .bold {
+    font-weight: 600;
+}
+.custom .extrabold {
+    font-weight: 700;
+}
+.custom .black {
+    font-weight: 900;
+}
+.custom .caps {
+    text-transform: uppercase;
+}
+.custom .nodecor {
+    text-decoration: none;
+}
+
+.custom span,
+.custom a:visited,
+.custom a:hover,
+.custom a {
+    color: inherit;
+    font: inherit;
+}
+
+
+.newheader {
+    border-bottom: 1px solid #e7e8e9!important;
+}

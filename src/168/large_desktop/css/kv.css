@@ -1,0 +1,193 @@
+
+
+
+
+
+
+.custom .kv {
+    display: flex;
+
+}
+
+.custom .kv__left,
+.custom .kv__right {
+    min-width: 50%;
+}
+
+.custom .kv__basket__basket {
+    animation: infinite basket 9s; 
+    margin-bottom: -60%;
+}
+
+.custom .kv__basket__shar1,
+.custom .kv__basket__shar2,
+.custom .kv__basket__shar3 {
+    position: absolute;
+}
+.custom .kv__basket__shar1 {
+    top: -340px;
+    width: 30%;
+    left: 54%;
+    /* top: 10%;
+    width: 30%; */
+    animation: infinite shars 10s 1s; 
+}
+.custom .kv__basket__shar2 {
+    top: -70px;
+    width: 35%;
+    left: 30%;
+    animation: infinite shars 7s 3s; 
+}
+.custom .kv__basket__shar3 {
+    top: -140px;
+    width: 24%;
+    left: 24%;
+    animation: infinite shars 8s; 
+}
+
+
+.custom .kv__basket__basket img {
+    width: 165%;
+    left: -33%;
+}
+
+
+.custom .kv__slogan {
+    padding-top: 40px;
+    padding-left: 30px;
+
+}
+
+.custom .kv__slogan1 {
+    transform: skew(0, -10grad) translateX(-36%);
+    font-size: 36px;
+    transform-origin: left;
+    line-height: 1;
+}
+
+.custom .kv__slogan2 {
+    transform: skew(0, -10grad);
+    font-size: 18px;
+    transform-origin: left;
+    padding: 20px 0;
+}
+
+.custom .kv__slogan3 {
+    transform: skew(0, -10grad);
+    font-size: 22px;
+    transform-origin: left;
+}
+
+
+.custom .disclamer {
+    padding: 0 0 50px;
+    margin: 0;
+    background: #0C79CF;
+}
+.custom .disclamer > div {
+    font-size: 11px;
+}
+
+@media screen and (max-width:800px) {
+    .custom .kv {
+        flex-wrap: wrap;
+    }    
+    .custom .kv > div {
+        min-width: 100%;
+    }
+    .custom .kv > div.kv__left {
+        max-width: 205px;
+        min-width: unset;
+        margin: auto;
+    }
+    .custom .kv__basket {
+        transform: translateX(-30%);
+    }
+    .custom .kv__basket__basket {
+        animation: infinite basket-mobile 9s; 
+        margin-bottom: calc(-400px + -3%);
+    }
+    .custom .kv__basket__shar1 {
+        top: -200px;
+        left: 4%;
+    }
+    .custom .kv__basket__shar2 {
+        top: calc(-406px + 70%);
+        left: 95%;
+    }
+    .custom .kv__basket__shar3 {
+        top: calc(-420px + 73%);
+        left: 82%;
+    }
+    
+    .custom .kv__slogan {
+        padding: 10px 20px 30px 20%;
+    }
+
+    .custom .kv__slogan1 {
+        transform: skew(0, -10grad);
+        font-size: 15px;
+    }
+    
+    .custom .kv__slogan2 {
+        transform: skew(0, -10grad);
+        font-size: 10px;
+        transform-origin: left;
+        padding: 10px 0;
+    }
+    
+    .custom .kv__slogan3 {
+        transform: skew(0, -10grad);
+        font-size: 14px;
+        line-height: 1;
+        transform-origin: left;
+    }
+
+    .custom .kv__basket__basket img {
+        width: 165%;
+        left: -33%;
+    }
+}
+
+
+/* @keyframes basket {
+    0% {
+        transform: translateY(-49%)
+    }
+    50% {
+        transform: translateY(-47%)
+    }
+    100% {
+        transform: translateY(-49%)
+    }
+}  */
+@keyframes basket {
+    0% {
+        transform: translateY(-490px)
+    }
+    50% {
+        transform: translateY(-470px)
+    }
+    100% {
+        transform: translateY(-490px)
+    }
+} 
+@keyframes basket-mobile {
+    0% {
+        transform: translateY(-310px)
+    }
+    50% {
+        transform: translateY(-290px)
+    }
+    100% {
+        transform: translateY(-310px)
+    }
+} 
+@keyframes shars {
+    0% {
+        transform: translateY(0%)
+    }
+    30% {
+        transform: translateY(5%)
+    }
+} 

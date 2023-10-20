@@ -1,0 +1,313 @@
+
+
+.custom .kv-light {
+}
+
+.custom .kv-light__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: calc(var(--width)*0.8);
+}
+.custom .kv-light__bg img {
+    width: 100%;
+    left: -12%;
+}
+
+
+.custom .kv-light__stars {
+    position: absolute;
+    width: calc(var(--width)*0.8);
+    height: 500px;
+    top: 100px;
+}
+
+.custom .kv-light__stars > div {
+    position: absolute;
+}
+
+.custom .kv-light__stars > div img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.custom .kv-light__star1 {
+    left: 25%;
+    top: -30%;
+    width: 16%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star1 img {
+    animation: infinite rotate 30s;
+    transform-origin: center;
+}
+.custom .kv-light__star2 {
+    left: 35%;
+    top: -20%;
+    width: 13%;
+    animation: infinite pulse 1s;
+    transform-origin: center;
+}
+.custom .kv-light__star2 img {
+    animation: infinite rotate 39s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star3 {
+    left: 35%;
+    top: 10%;
+    width: 3%;
+    animation: infinite pulse 1s;
+    transform-origin: center;
+}
+.custom .kv-light__star3 img {
+    animation: infinite swing 13s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star4 {
+    left: 31%;
+    top: 15%;
+    width: 2%;
+    animation: infinite pulse 1s;
+    transform-origin: center;
+}
+.custom .kv-light__star4 img {
+    animation: infinite swing 2s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+
+.custom .kv-light__star5 {
+    left: 34%;
+    top: 30%;
+    width: 1.5%;
+    animation: infinite pulse 1s;
+    transform-origin: center;
+}
+.custom .kv-light__star5 img {
+    animation: infinite swing 3s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+
+.custom .kv-light__star6 {
+    left: 34%;
+    top: 16%;
+    width: 4%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star6 img {
+    animation: infinite swing 10s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star7 {
+    left: 31%;
+    top: -10%;
+    width: 5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star7 img {
+    animation: infinite swing 10s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+
+.custom .kv-light__star8 {
+    left: 31%;
+    top: -10%;
+    width: 5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star8 img {
+    animation: infinite swing 10s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star9 {
+    left: 36%;
+    top: 20%;
+    width: 4%;
+    animation: infinite pulse 1s;
+    transform-origin: center;
+}
+.custom .kv-light__star9 img {
+    animation: infinite swing 20s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star10 {
+    left: 36%;
+    top: -10%;
+    width: 1.5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star10 img {
+    animation: infinite swing 7s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star11 {
+    left: 37%;
+    top: 13%;
+    width: 1.5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star11 img {
+    animation: infinite swing 11s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star12 {
+    left: 36%;
+    top: 40%;
+    width: 1.5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star12 img {
+    animation: infinite swing 20s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star13 {
+    left: 39%;
+    top: 45%;
+    width: 1.5%;
+    animation: infinite pulse 2s;
+    transform-origin: center;
+}
+.custom .kv-light__star13 img {
+    animation: infinite swing 15s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star14 {
+    left: 33%;
+    top: 25%;
+    width: 1%;
+}
+.custom .kv-light__star14 img {
+    animation: infinite swing 10s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star15 {
+    left: 34%;
+    top: 7%;
+    width: 1%;
+}
+.custom .kv-light__star15 img {
+    animation: infinite swing 9s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star16 {
+    left: 38%;
+    top: 28%;
+    width: 1%;
+}
+.custom .kv-light__star16 img {
+    animation: infinite swing 17s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star17 {
+    left: 39%;
+    top: 2%;
+    width: 1%;
+}
+.custom .kv-light__star17 img {
+    animation: infinite swing 9s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star18 {
+    left: 33%;
+    top: 32%;
+    width: 1%;
+}
+.custom .kv-light__star18 img {
+    animation: infinite swing 6s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+.custom .kv-light__star19 {
+    left: 35%;
+    top: 41%;
+    width: 1%;
+}
+.custom .kv-light__star19 img {
+    animation: infinite swing 12s linear;
+    animation-direction: reverse;
+    transform-origin: center;
+}
+
+@media screen and (max-width: 800px) {
+    .custom .kv-light__bg {
+        width: 100%;
+        text-align: center;
+    }
+    .custom .kv-light__bg img {
+        left: unset;
+    }
+    .custom .kv-light__stars {
+        width: 100%;
+        height: 0;
+        padding-top: 80%;
+        transform: translate(11%,-8%);
+    }
+    .custom .kv-light__star7 {
+        left: 21%;
+    }
+    .custom .kv-light__star8 {
+        left: 41%;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes swing {
+    0% {
+        transform: translate(-5%,-10%);
+    }
+    30% {
+        transform: translate(5%,10%);
+    }
+    50% {
+        transform: translate(-5%,10%);
+    }
+    80% {
+        transform: translate(5%,-10%);
+    }
+    100% {
+        transform: translate(-5%,-10%);
+    }
+}

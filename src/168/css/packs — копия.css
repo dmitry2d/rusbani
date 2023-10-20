@@ -1,0 +1,141 @@
+
+
+
+.custom .packs {
+    /* margin-top: -10px; */
+    z-index: 50;
+}
+.custom  .packs__clouds {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/clouds.svg') no-repeat top center;
+    background-size: cover;
+}
+
+.custom .packs__shadow {
+    position: absolute;
+    bottom: 18%;
+    height: 15%;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    z-index: 2;
+}
+.custom .packs__blue {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    height: 35%;
+    background: var(--sky);
+    opacity: 0.3;
+}
+
+.custom .packs__images {
+    width: 100%;
+    height: 0;
+    padding-top: 44%;
+    /* height: 400px; */
+    z-index: 3;
+}
+.custom .packs__images img {
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    transition: left 0.5s ease-in-out, right 0.5s ease-in;
+}
+.custom .packs__pack1 {
+    left: 5%;
+    z-index: 3;
+}
+.custom .packs__pack2 {
+    left: 15%;
+    top: -2%;
+}
+.custom .packs__pack3 {
+    left: 19%;
+    z-index: 3;
+}
+.custom .packs__pack4 {
+    left: 24%;
+    z-index: 2;
+    top: -2%;
+}
+.custom .packs__pack5 {
+    left: 33%;
+    top: -4%;
+}
+.custom .packs__pack6 {
+    right: 30%;
+    top: -3%;
+    z-index: 2;
+}
+.custom .packs__pack7 {
+    right: 25%;
+    z-index: 3;
+}
+.custom .packs__pack8 {
+    right: 19%;
+    top: -4%;
+    z-index: 2;
+}
+.custom .packs__pack9 {
+    right: 15%;
+    top: -5%;
+    z-index: 1;
+}
+.custom .packs__pack10 {
+    right: 9%;
+    z-index: 1;
+    top: -5%;
+}
+.custom .packs__pack11 {
+    right: 4%;
+    z-index: 2;
+    top: -5%;
+}
+.custom .packs__pack12 {
+    right: 5%;
+    z-index: 3;
+}
+
+
+.packs__images:hover .packs__pack1 {
+    left: 65%;
+}
+.packs__images:hover .packs__pack2 {
+    left: 45%;
+}
+.packs__images:hover .packs__pack3 {
+    left: 55%;
+}
+.packs__images:hover .packs__pack4 {
+    left: 45%;
+}
+.packs__images:hover .packs__pack5 {
+    left: 45%;
+}
+.packs__images:hover .packs__pack6 {
+    right: 71%;
+}
+.packs__images:hover .packs__pack7 {
+    right: 68%;
+}
+.packs__images:hover .packs__pack8 {
+    right: 65%;
+}
+.packs__images:hover .packs__pack9 {
+    right: 45%;
+}
+.packs__images:hover .packs__pack10 {
+    right: 56%;
+}
+.packs__images:hover .packs__pack11 {
+    right: 44%;
+}
+.packs__images:hover .packs__pack12 {
+    right: 65%;
+}
