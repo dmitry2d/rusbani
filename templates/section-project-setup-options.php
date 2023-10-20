@@ -70,8 +70,7 @@
 
                     </div>
 
-                    
-
+                    <?php if($option['price']): ?>
                     <div class="setup-options__table__td">
                         <div class="setup-option__price">
                             <div class="setup-option__pictures">
@@ -88,6 +87,7 @@
                             <?php }; ?>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
 
                 <?php
@@ -303,6 +303,15 @@
         color: rgb(var(--col-brown));
         font-size: 20rem;
         font-weight: 500;
+    }
+    .setup-options__table__tr:last-child {
+        box-shadow: inset 0 0 0 3rem rgb(var(--col-brown));
+    }
+    .setup-options__table__tr:last-child  .setup-options__table__td:nth-child(3) {
+        display: none;
+    }
+    .setup-options__table__tr:last-child  .setup-option__title {
+        color: rgb(var(--col-brown));
     }
     .setup-option__title {
         font-size: 20rem;
