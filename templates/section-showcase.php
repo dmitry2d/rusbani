@@ -8,10 +8,21 @@
 <?php
     $items = get_posts (array(
         'category' => 5,
-        'numberposts' => 100
+        'numberposts' => 100,
+        'meta_query'    => array(
+            'relation'      => 'OR',
+            array(
+                'key'       => 'hide',
+                'value'     => 0,
+                'compare'   => '='
+            ),
+            array(
+                'key'       => 'hide',
+                'compare' => 'NOT EXISTS'
+            )
+        )
     ));
 ?>
-
 <div class="showcase">
 
     <div class="showcase__title">

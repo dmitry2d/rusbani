@@ -7,14 +7,24 @@
 
 <?php
     global $post;
-    // $photos = get_field('photos', $post -> ID);
-    // print_pre (get_fields($post -> ID));
 ?>
 
 <?php
     $items = get_posts (array(
         'category' => 5,
-        'numberposts' => 100
+        'numberposts' => 100,
+        'meta_query'    => array(
+            'relation'      => 'OR',
+            array(
+                'key'       => 'hide',
+                'value'     => 0,
+                'compare'   => '='
+            ),
+            array(
+                'key'       => 'hide',
+                'compare' => 'NOT EXISTS'
+            )
+        )
     ));
 ?>
 
