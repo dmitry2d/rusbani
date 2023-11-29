@@ -43,8 +43,7 @@
         height: 200rem;
         /* background: url('<?= get_template_directory_uri(); ?>/src/images/struzhka.png') no-repeat top 5rem left; */
     }
-
-    
+   
     .setup__title {
         padding: 40rem 0 0;
         font-size: 48rem;
@@ -58,8 +57,8 @@
         .setup__title {
             margin-left: 0;
             padding: 20rem 0 40rem;
-            font-size: 32rem;
-            text-align: center;
+            font-size: 37rem;
+            text-align: left;
             max-width: unset;
         }
        

@@ -43,7 +43,7 @@
 
                 <div class="setup-options__table__tr">
                     <div class="setup-options__table__td">
-                        <div class="setup-option__title">
+                        <div class="setup-option__title" collect-form-data="request__additional__options">
                             <?= $option['title']?> 
                         </div>
                     </div>
@@ -183,26 +183,32 @@
 
     function create_request_html () {
 
-        let html ='';
-        html +='Состав заказа: <br>';
-        html +='Проект: <?= get_the_title() ?><br>';
-        html +='Базовый набор опций: <?= $base_title ?><br>';
-        html +='Дополнительные опции:<br>';
-        html += $('.setup-options__table__tr.selected .setup-option__item__text')
-            .toArray()
-            .reduce((summ, item) => {
-                return summ + '- ' + $(item).html() + '<br>';
-            }, '');
-        // $('#setup-options__form__details').html(html);
+        // Collecting request data into hidden form fields for CF7 request form
+        
         $('#options-form [name="my-options-title"]').val('<?= get_the_title() ?>');
         $('#options-form [name="my-options-base-title"]').val('<?= $base_title ?>');
-        $('#options-form [name="my-options-options"]').val(
-            $('.setup-options__table__tr.selected .setup-option__item__text')
+
+        // Collecting base and additional options titles
+        // I use special attribute for it - [collect-form-data]
+
+        function collect_request_options () {
+            let result = '';
+            result += '\nБазовые опции:';
+            result += $('[collect-form-data="request__base__options"]')
             .toArray()
             .reduce((summ, item) => {
-                return summ + $(item).html();
-            }, '')
-        );
+                return summ + '\n' + $(item).html().replace(/  /g,'').replace (/\n/g, '');
+            }, '');
+            result += '\n\nДополнительные опции:';
+            result += $('[collect-form-data="request__additional__options"]')
+            .toArray()
+            .reduce((summ, item) => {
+                return summ + '\n' + $(item).html().replace(/  /g,'').replace (/\n/g, '');
+            }, '');
+            return result;
+        }
+
+        $('#options-form [name="my-options-options"]').val(collect_request_options ());
         $('#options-form [name="my-options-base-price"]').val(prices_model.base.toLocaleString() + ' ₽');
         $('#options-form [name="my-options-options-price"]').val(prices_model.options.toLocaleString() + ' ₽');
         $('#options-form [name="my-options-total-price"]').val(prices_model.total().toLocaleString() + ' ₽');
@@ -230,8 +236,6 @@
             endif;
         }
     ?>
-    // console.log (options_gallery_images)
-    console.log (options_gallery_images);
     $(document).ready(() => {
         $('[options_popup_gallery_index]').on('click', e=> {
             let index = $(e.target).attr('options_popup_gallery_index');            

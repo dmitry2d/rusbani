@@ -24,7 +24,6 @@
 <script>
     $(document).on('popup_gallery_open', (e, data) => {
         let images = JSON.parse(data);
-        console.log (images);
         let node = $('#popup-gallery__items');
         node.html();
         for (let image of images) {

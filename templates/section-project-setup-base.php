@@ -7,82 +7,112 @@
 
 <?php
     global $post;
-    $items = get_field('base-setup-options', $post->ID);
-    $price  = get_field('base-setup-price', $post->ID);
+    $title = get_field('base-options_name', $post->ID);
+    $categories = get_field('base-options_categories', $post->ID) ?: [];
     $picture  = get_field('base-setup-picture', $post->ID);
-    $title = get_the_title($post->ID);
-    if ($items) { 
+    $price  = get_field('base-setup-price', $post->ID);
 ?>
 
-
+<script>
+    // collect gallery images data
+    const base_setup_gallery_images = {};
+</script>
 <div class="setup-base">
 
     <div class="container">
+        
         <div class="setup-base__title">
-            Базовая комплектация
+            <?= $title ?>
         </div>
-        <div class="setup-base__table">
-            <div class="setup-base__table__title">
-                <?= $title ?>
-            </div>
-            <div class="setup-base__items">
-                <?php
-                    foreach($items as $index=>$item) {
-                ?>
-                    <div class="setup-base__item">
-                        <div class="setup-base__item__text">
-                            <?= $item['material'] ?>
+        
+            <div class="setup-base__table">
+
+                <div class="setup-base__table__categories">
+
+                    <?php
+                        foreach($categories as $index=>$item):
+                            $category = ($item['base-options_catergory']);
+                    ?>
+                    <script>
+                        // collect gallery images data
+                        base_setup_gallery_images[<?=$index?>] = {};
+                    </script>
+                    <div class="setup-base__table__category">
+
+                        <div class="setup-base__table__title" collect-form-data="request__base__options">
+                            <?= $category["base-options_catergory_name"]?> 
                         </div>
-                        <div class="setup-base__item__pictures">
-                            <?php if($item['images']): ?>
-                                <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" popup_gallery_index="<?=$index?>">
-                            <?php endif;?>
+                        <div class="setup-base__items">
+
+                            <?php
+                                foreach($category['base-options_catergory_items'] as $item_index=>$cat_item) {
+                            ?>
+                            <div class="setup-base__item">
+                                <div class="setup-base__item__text">
+                                    <?= $cat_item['name'] ?>
+                                </div>
+                                <?php
+                                    if ($cat_item['images']):
+                                ?>
+                                <script>
+                                    // collect gallery images data
+                                    base_setup_gallery_images[<?=$index?>][<?=$item_index?>] = [];
+                                </script>
+                                    <?php
+                                        foreach($cat_item['images'] as $image):
+                                    ?>
+                                    <script>
+                                        base_setup_gallery_images[<?=$index?>][<?=$item_index?>].push('<?=$image['url']?>');
+                                    </script>
+                                    <?php
+                                        endforeach;
+                                    ?>
+                                    <div class="setup-base__item__pictures">
+                                        <img src="<?= get_template_directory_uri(); ?>/src/images/icons/setup-item-photo.png" category_gallery_index="<?=$index?>" category_gallery_item_index="<?=$item_index?>">
+                                    </div>
+                                <?php
+                                  endif;    
+                                ?>
+                            </div>
+                            <?php
+                                }
+                            ?>
+
                         </div>
+
                     </div>
-                <?php
-                    }
-                ?>
+                    <?php
+                        endforeach;
+                    ?>
+
+                </div>
+
+
+                <div class="setup-base__item__price">
+                    <span>Цена базовой комплектации</span>
+                    <b><?= $price ?>₽</b>
+                </div>
+                <div class="setup-base__item__picture">
+                    <img src="<?= $picture ?>" alt="">
+                </div>
             </div>
-            <div class="setup-base__item__price">
-                <span>Цена базовой комплектации</span>
-                <b><?= $price ?>₽</b>
-            </div>
-            <div class="setup-base__item__picture">
-                <img src="<?= $picture ?>" alt="">
-            </div>
+
         </div>
     </div>
     
 </div>
 
-<?php
-    }
-?>
-
-
 <!-- section-project-setup-base.php -->
 <script>
 
-    // collect gallery images data
-    const gallery_images = {};
-    <?php
-        foreach($items as $index=>$item) {
-            ?>
-            gallery_images[<?= $index?>] = [];
-            <?php
-            if($item['images']):foreach($item['images'] as $image) {
-                ?>
-                    gallery_images[<?= $index?>].push('<?=$image?>') ;
-                <?php
-            };
-            endif;
-        }
-    ?>
+
     $(document).ready(() => {
-        $('[popup_gallery_index]').on('click', e=> {
-            let index = $(e.target).attr('popup_gallery_index');
-            if (gallery_images[index].length) {
-                $(document).trigger('popup_gallery_open', JSON.stringify(gallery_images[index]));
+        $('[category_gallery_item_index]').on('click', e=> {
+            let category_index = $(e.target).attr('category_gallery_index');
+            let item_index = $(e.target).attr('category_gallery_item_index');
+            let image_array = base_setup_gallery_images[category_index][item_index];
+            if (image_array.length) {
+                $(document).trigger('popup_gallery_open', JSON.stringify(image_array));
             }
         })
     })
@@ -95,6 +125,7 @@
     .setup-base {
         background: rgba(var(--col-dark-beige), 0.1);
         padding: 20rem 0 40rem;
+        margin-top: 40rem;
     }
     .setup-base__title {
         padding: 20rem 0;
@@ -109,19 +140,33 @@
         background: rgba(var(--col-white), 0.5);
         box-shadow: inset 0 0 0rem 10rem rgba(var(--col-dark-beige), 0.5);
     }
+    .setup-base__table__categories {
+        flex-grow: 1;
+        padding: 20rem 0;
+    }
+    .setup-base__table__category {
+        display: flex;
+        align-items: center;
+    }
+    .setup-base__table__category {
+        margin: 0 40rem;
+    }
+    .setup-base__table__category:not(:last-child) {
+        border-bottom: 1px solid rgb(var(--col-dark-beige));
+    }
     .setup-base__table__title {
         font-size: 24rem;
-        padding: 20rem 40rem;
+        padding: 20rem 0;
         color: rgb(var(--col-main));
-        min-width: 250rem;
+        width: 30%;
+        max-width: 30%;
+        font-weight: 500;
     }
-    
     .setup-base__items {
         display: flex;
         flex-direction: column;
-        padding: 40rem;
+        padding: 20rem 0 20rem 30rem;
         flex-grow: 1;
-        min-width: 40%;
     }
     .setup-base__item + .setup-base__item  {
         border-top: 1px solid rgba(var(--col-dark-beige),0.3);
@@ -140,7 +185,6 @@
     }
     .setup-base__item:hover {
         background: rgba(var(--col-dark-beige),0.3);
-        /* border-radius: 10rem; */
     }
     .setup-base__item__text {
         flex-grow: 1;
@@ -159,7 +203,7 @@
         object-position: center center;
     }
     .setup-base__item__price {
-        max-width: fit-content;
+        flex-basis: 0;
         background: rgba(var(--col-white), 0.5);
         color: rgb(var(--col-brown));
         padding: 40rem;
@@ -168,6 +212,7 @@
     }
     .setup-base__item__price b{
         display: block;
+        white-space: nowrap;
         font-size: 41rem;
         font-weight: 600;
     }
@@ -189,6 +234,7 @@
         .setup-base {
             background: rgba(var(--col-dark-beige), 0.1);
             padding: 10rem 0 0;
+            margin-top: 0;
         }
         .setup-base__title {
             font-size: 24rem;
@@ -197,8 +243,24 @@
             flex-direction: column;
             padding: 40rem;
         }
+        .setup-base__table__categories {
+            margin: -20rem 0;
+            padding: 0;
+        }
+        .setup-base__table__category {
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 20rem 0 40rem;
+        }
         .setup-base__table > div {
             min-width: 100%;
+            width: 100%;
+        }
+        .setup-base__table__title {
+            width: 100%;
+            max-width: 100%;
+        }
+        .setup-base__items {
             width: 100%;
         }
         .setup-base__item__picture {
@@ -208,7 +270,7 @@
             /* display: none; */
         }
         .setup-base__table__title {
-            padding: 0 0 20rem;
+            padding: 0 0 10rem;
             font-size: 26rem;
             font-weight: 500;
         } 
@@ -230,11 +292,13 @@
         .setup-base__item__price > span {
             font-size: 15rem;
             line-height: 1;
+            flex-grow: 1;
         }
         .setup-base__item__price > b {
             white-space: nowrap;
             font-size: 34rem;
             font-weight: 500;
+            padding-left: 10rem;
         }
        
     }
