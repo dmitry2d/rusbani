@@ -382,6 +382,7 @@
         font-size: 18rem;
         font-weight: 500;
         padding: 0 20rem 0 40rem;
+        white-space: nowrap;
     }
     .setup-option__price__add {
         background: rgb(var(--col-green));
